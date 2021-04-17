@@ -66,7 +66,7 @@ const About = () => {
                     <img src='rrs.png' alt="rss"/>
                 </Grid>
 
-                <Grid item container xs={12} sm={6} alignItems='center' spacing={3} >
+                <Grid item container xs={12} sm={6} alignItems='center'   >
                     <Typography variant='h5' className={classes.aboutText}>
                         At MY Beauty Salon, we use the high quality products and the
                         latest techniques for treating hair. We don't cut corners, we cut hair

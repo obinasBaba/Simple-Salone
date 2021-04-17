@@ -7,10 +7,6 @@ import Hero from "./hero";
 import About from "./about";
 import Service from "./service";
 
-const useStyle = makeStyles( theme => ({
-
-}))
-
 function App() {
     return (
         <React.Fragment>
