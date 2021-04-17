@@ -6,55 +6,66 @@ import Typography from "@material-ui/core/Typography";
 const useStyle = makeStyles(theme => ({
     root: {
         padding: theme.spacing(3),
+        background: '#FFEBE3'
     },
 
     container: {
         display: 'grid',
         gridTemplateColumns: 'repeat(12, 1fr)',
-        gridTemplateRows: '.8fr .2fr .6fr .2fr  .8fr ',
+
+        // columnGap: theme.spacing(2),
+        rowGap: theme.spacing(4),
+        [theme.breakpoints.up('sm')]: {
+            gridTemplateRows: '.8fr .2fr .6fr .2fr  .8fr',
+        },
 
         '& img': {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            gridColumn: '1 / 9',
-            // marginBottom: '-10%',
+            gridColumn: '1 / 13',
+
+            [theme.breakpoints.up('sm')]: {
+                gridColumn: '1 / 9',
+            },
         },
 
         '& > div': {
-            gridColumn: '8 / 13',
             alignSelf: 'center',
-            // marginBottom: '-10%',
+            gridColumn: '1 / 13',
+            [theme.breakpoints.up('sm')]: {
+                gridColumn: '8 / 13',
+            },
         },
 
-        [theme.breakpoints.up('sm')]: {
-            '& img': {
-
-            }
+    },
+    [theme.breakpoints.up('sm')]: {
+        imgOne: {
+            gridRow: '1/ 3',
         },
-    },
-    imgOne: {
-        gridRow: '1/ 3',
-    },
-    descOne: {
-        gridRow: '1 / 3'
-    },
-    imgTwo: {
-        gridRow: '2 / 5',
-        gridColumn: '5 / 13 !important'
-    },
-    descTwo: {
-        gridRow: '2 / 5',
-        gridColumn: '1 / 6 !important'
 
-    },
-    imgThree: {
-        gridRow: '4 / 6'
-    },
-    descThree: {
+        descOne: {
+            gridRow: '1 / 3'
+        },
 
-        gridRow: '4 / 6'
-    }
+        imgTwo: {
+            gridRow: '2 / 5',
+            gridColumn: '5 / 13 !important'
+        },
+
+        descTwo: {
+            gridRow: '2 / 5',
+            gridColumn: '1 / 6 !important'
+        },
+
+        imgThree: {
+            gridRow: '4 / 6'
+        },
+
+        descThree: {
+            gridRow: '4 / 6'
+        }
+    },
 
 }))
 
@@ -64,9 +75,9 @@ const Service = () => {
 
     return (
         <Grid xs container className={classes.root}>
-            <Grid item xs={0} sm={0} md={2} style={{border: 'thin solid crimson'}}/>
+            <Grid item xs={0} sm={0} md={1} lg={2} style={{border: 'thin solid crimson'}}/>
 
-                <Grid item xs sm={12} md={8} className={classes.container}>
+            <Grid item xs sm={12} md={10} lg={8} className={classes.container}>
 
                     <img className={classes.imgOne} src="img-one.png" alt=""   />
 
@@ -109,9 +120,7 @@ const Service = () => {
 
                 </Grid>
 
-
-
-            <Grid item xs={0} sm={0} md={2} style={{border: 'thin solid crimson'}}/>
+            <Grid item xs={0} sm={0} md={1} lg={2} style={{border: 'thin solid crimson'}}/>
         </Grid>
     );
 };
