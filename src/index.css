@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*.makeStyles-aboutText-6{*/
+/*  position: relative;*/
+/*  font-size: 32rem;*/
+/*}*/
+/*.makeStyles-aboutText-6::after {*/
+/*  content: 'asldkfj';*/
+/*  display: block;*/
+
+
+/*}*/
