@@ -5,8 +5,13 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyle = makeStyles(theme => ({
     root: {
-        padding: theme.spacing(3),
-        background: '#FFEBE3'
+        background: '#FFEBE3',
+        [theme.breakpoints.up('md')]: {
+            padding: theme.spacing(3),
+            paddingTop: theme.spacing(17),
+            paddingBottom: theme.spacing(17),
+        },
+
     },
 
     container: {
@@ -75,7 +80,7 @@ const Service = () => {
 
     return (
         <Grid xs container className={classes.root}>
-            <Grid item xs={0} sm={0} md={1} lg={2} style={{border: 'thin solid crimson'}}/>
+            <Grid item xs={0} sm={0} md={1} lg={2}  />
 
             <Grid item xs sm={12} md={10} lg={8} className={classes.container}>
 
@@ -118,9 +123,9 @@ const Service = () => {
                         </Typography>
                     </div>
 
-                </Grid>
+            </Grid>
 
-            <Grid item xs={0} sm={0} md={1} lg={2} style={{border: 'thin solid crimson'}}/>
+            <Grid item xs={0} sm={0} md={1} lg={2}  />
         </Grid>
     );
 };

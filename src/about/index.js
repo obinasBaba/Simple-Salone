@@ -26,7 +26,6 @@ const useClass = makeStyles(theme => ({
         }
     },
     container: {
-        border: 'thin solid crimson',
         position: 'relative',
         '&::after': {
             content: 'sdlkjf',
@@ -58,7 +57,7 @@ const About = () => {
 
     return (
         <Grid container justify='center' className={classes.root}>
-            <Grid xs={0} sm={1} style={{ border: 'thin solid crimson' }} />
+            <Grid xs={0} sm={1}   />
 
             <Grid xs item container className={classes.container}>
 
@@ -75,7 +74,7 @@ const About = () => {
                 </Grid>
             </Grid>
 
-            <Grid item xs={0} sm={1}  style={{ border: 'thin solid crimson' }}/>
+            <Grid item xs={0} sm={1}   />
         </Grid>
     );
 };

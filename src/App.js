@@ -1,11 +1,10 @@
 import './App.css';
-import CSSGrid from "./mock";
-import {Box} from "@material-ui/core";
 import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
 import Hero from "./hero";
 import About from "./about";
 import Service from "./service";
+import ParallaxCarousel from "./gallery";
+
 
 function App() {
     return (
@@ -13,6 +12,7 @@ function App() {
             <Hero  />
             <About/>
             <Service />
+            <ParallaxCarousel />
         </React.Fragment>
     );
 }
