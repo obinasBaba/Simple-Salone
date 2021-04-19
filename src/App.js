@@ -7,6 +7,7 @@ import ParallaxCarousel from "./gallery";
 import PriceList from "./priceList";
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Float from "./priceList/floatDemo";
+import Footer from "./footer";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                 <Service />
                 <ParallaxCarousel />
                 <PriceList />
+                <Footer />
             </ThemeProvider>
         </React.Fragment>
     );
