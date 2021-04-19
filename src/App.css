@@ -1,9 +1,10 @@
+
 *, *::after, *::before{
   box-sizing: border-box !important;
 }
 
 body{
-  margin: 0 !important; ;
+  margin: 0 !important;
 }
 
 img{

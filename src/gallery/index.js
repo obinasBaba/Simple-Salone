@@ -28,8 +28,8 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
     },
     container: {
         padding: spacing(2),
-        paddingTop: spacing(10),
-        paddingBottom: spacing(10),
+        paddingTop: spacing(5),
+        paddingBottom: spacing(5),
 
         [breakpoints.up('sm')]: {
             // paddingTop: spacing(10),
@@ -125,6 +125,7 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
     indicatorContainer: {
         textAlign: 'center',
         margin: spacing(2),
+        marginBottom: spacing(0),
     },
 }));
 
