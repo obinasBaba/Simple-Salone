@@ -10,6 +10,8 @@ import {makeStyles} from "@material-ui/core/styles";
 const Accordion = withStyles(theme => ({
     root: {
         border: '1px solid rgba(0, 0, 0, .125)',
+        background: 'transparent',
+        color: 'white',
         boxShadow: 'none',
         width: '100%',
         flex: 1,
@@ -19,15 +21,12 @@ const Accordion = withStyles(theme => ({
             border: 'none',
         },
 
-        '&:before': {
-            // display: 'none',
-        },
         '&$expanded': {
             margin: 0,
             height: 'auto',
 
             [theme.breakpoints.up('lg')]: {
-                height: '100%',
+                // height: '100%',
                 width: 'initial',
             }
         },
@@ -92,12 +91,12 @@ const FooterItem = ( {title, children} ) => {
     }
 
     return (
-        <Accordion expanded={matches ? expanded : true}>
+        <Accordion  expanded={matches ? expanded : true}>
 
             <AccordionSummary
 
                 expandIcon={
-                   m2 ? <ExpandMoreIcon onClick={handleExpanded} /> : null
+                   m2 ? <ExpandMoreIcon color='secondary'  onClick={handleExpanded} /> : null
                 }
                 aria-controls="panel1a-content"
                 id="panel1a-header">
@@ -106,7 +105,7 @@ const FooterItem = ( {title, children} ) => {
                      onClick={(event) => event.stopPropagation()}
                      onFocus={(event) => event.stopPropagation()}>
 
-                    <Typography noWrap >{ title }</Typography>
+                    <Typography variant='h6'  noWrap >{ title }</Typography>
                 </Box>
 
             </AccordionSummary>

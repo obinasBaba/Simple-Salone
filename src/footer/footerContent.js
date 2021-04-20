@@ -1,6 +1,6 @@
 import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
-import {Button, Grid, IconButton, TextField, Typography} from "@material-ui/core";
+import {Button, Grid, IconButton, TextField as MiuTextField, Typography, withStyles} from "@material-ui/core";
 import FooterItem from "./fotterContentItem";
 import data from "./data";
 import Box from "@material-ui/core/Box";
@@ -26,18 +26,12 @@ const useStyle = makeStyles( theme => ({
     details: {
         display: "flex",
         flexDirection: 'column',
-        gap: '1.4rem',
+        gap: '1.5rem',
     },
     days: {
         display: 'flex',
-        flexDirection: 'column',
-
-        '& > :nth-child(n) ': {
-            display: 'flex',
-            gap: '1.3rem',
-            justifyContent: 'space-between',
-            alignItems: 'baseline',
-        }
+        maxWidth: '270px',
+        justifyContent: 'space-between'
     },
     contact: {
         display: 'flex',
@@ -48,13 +42,16 @@ const useStyle = makeStyles( theme => ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-
-        // gap: '2rem',
     }
 }) )
 
 
 
+const TextField = withStyles( theme => ({
+    root: {
+        color: 'white !important',
+    }
+}) )(MiuTextField);
 
 
 const FooterContent = () => {
@@ -64,27 +61,30 @@ const FooterContent = () => {
         <Grid item container className={ classes.root }>
             <FooterItem title='Get the latest news'>
                 <div className={classes.details}>
-                    <Typography variant='h6' color='primary'>
+                    <Typography  color='primary'>
                         signup for mailing list to get our
-                        <Typography variant='h6' color='primary'>
-                            latest news and giveaways!
-                        </Typography>
+                        latest news and giveaways!
                     </Typography>
 
 
-                    <TextField id="outlined-basic" label="Outlined" variant="outlined"/>
-                    <Button variant="contained" color="primary"> Signup </Button>
+                    <TextField label="Your Email" variant="outlined"/>
+                    <Button  > Signup </Button>
                 </div>
             </FooterItem>
 
             <FooterItem title='Hours'>
                 <div className={classes.days}>
-                    {
-                        data.map(day => <Box>
-                            <Typography gutterBottom noWrap>{day.day}</Typography>
-                            <Typography gutterBottom noWrap>{day.time}</Typography>
-                        </Box>)
-                    }
+                    <Box display='flex' flexDirection='column'>
+                        {
+                            data.map(day => <Typography gutterBottom noWrap>{day.day}</Typography> )
+                        }
+                    </Box>
+
+                    <Box display='flex' flexDirection='column'>
+                        {
+                            data.map(day => <Typography gutterBottom noWrap>{day.time}</Typography> )
+                        }
+                    </Box>
                 </div>
             </FooterItem>
 
@@ -109,26 +109,22 @@ const FooterContent = () => {
             <FooterItem title='Connect'>
                 <div className={classes.connect}>
                     <Box>
-                        <Typography gutterBottom noWrap>
+                        <Typography gutterBottom >
                             Follow us on social media to keep up
-                        </Typography>
-                        <Typography noWrap>
                             with all our contents and share your
-                        </Typography>
-                        <Typography noWrap>
                             make overs with us!
                         </Typography>
                     </Box>
 
                     <Box>
-                         <IconButton>
-                             <FacebookIcon />
+                         <IconButton color='inherit' edge='start' >
+                             <FacebookIcon fontSize='large' />
                          </IconButton>
-                        <IconButton>
-                             <InstagramIcon />
-                         </IconButton>
-                        <IconButton>
-                             <TwitterIcon />
+                        <IconButton color='inherit'>
+                             <InstagramIcon  fontSize='large'/>
+                         </IconButton >
+                        <IconButton color='inherit'>
+                             <TwitterIcon fontSize='large' />
                          </IconButton>
                     </Box>
 

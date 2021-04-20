@@ -25,7 +25,7 @@ const Cta = () => {
 
             <Typography align='center' gutterBottom variant='h3'>just an appointment away!</Typography>
 
-            <Button variant="contained">BOOK CONSultation</Button>
+            <Button >BOOK CONSultation</Button>
         </Grid>
     );
 };

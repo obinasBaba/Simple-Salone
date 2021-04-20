@@ -118,10 +118,6 @@ const data = [
                 price: 55,
             },
             {
-                serviceTitle: 'Micropeel',
-                price: 55,
-            },
-            {
                 serviceTitle: 'Ioxygen Facial',
                 price: 55,
             },

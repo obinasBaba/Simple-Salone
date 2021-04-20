@@ -42,7 +42,7 @@ const ContainerGrid = withStyles( theme => ({
             left: '-5%',
             fontWeight: '800',
             opacity: '.07',
-            right: `calc( 0px + ${theme.spacing(10)}px )`,
+            right: `calc( 0px + ${ theme.spacing( 10 ) }px )`,
             bottom: '10%',
 
             [theme.breakpoints.up( 'sm' )]: {
@@ -72,15 +72,18 @@ const useClass = makeStyles( theme => ({
                 bottom: '21%',
             },
         }
-    }
+    },
+    desc: {
+        fontSize: 'calc(1rem + .5vw)'
+    },
 }) )
 
 const About = () => {
     const classes = useClass();
 
     return (
-        <ContainerGrid container justify='center' >
-            <Grid xs={ 0 } sm={ 0 } lg={1} />
+        <ContainerGrid container justify='center'>
+            <Grid xs={ 0 } sm={ 0 } lg={ 1 }/>
 
 
             <ChildGrid xs sm lg item container>
@@ -93,7 +96,7 @@ const About = () => {
 
                 <Grid item container xs={ 12 } sm={ 6 } alignItems='center'>
                     <Grid item container xs={ 12 } lg={ 10 }>
-                        <Typography variant='h5' component='p' color='textSecondary'>
+                        <Typography component='p' color='textSecondary' className={ classes.desc }>
                             At MY Beauty Salon, we use the high quality products and the
                             latest techniques for treating hair. We don't cut corners, we cut hair
                             Book an appointment to find out for yourself.
@@ -102,7 +105,7 @@ const About = () => {
                 </Grid>
             </ChildGrid>
 
-            <Grid item xs={ 0 } sm={ 0 } lg={1}/>
+            <Grid item xs={ 0 } sm={ 0 } lg={ 1 }/>
         </ContainerGrid>
     );
 };

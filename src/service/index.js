@@ -5,12 +5,27 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyle = makeStyles(theme => ({
     root: {
+        position: 'relative',
         padding: theme.spacing(3),
         background: '#FFEBE3',
+        display: 'flex',
+        overflow: 'hidden',
+
         [theme.breakpoints.up('md')]: {
             padding: theme.spacing(3),
             paddingTop: theme.spacing(17),
             paddingBottom: theme.spacing(17),
+        },
+
+        ' &::after ': {
+            content: '"service"',
+            position: 'absolute',
+            fontSize: 'calc(3rem + 7vw)',
+            top: '-3%',
+            fontFamily: 'Monoton, cursive',
+            right: `-2%`,
+            fontWeight: '800',
+            opacity: '.04',
         },
 
     },
@@ -79,6 +94,9 @@ const Service = () => {
 
     return (
         <Grid xs container className={classes.root}>
+
+
+
             <Grid item xs={0} sm={0} md={1} lg={2}  />
 
             <Grid item xs sm={12} md={10} lg={8} className={classes.container}>
@@ -90,7 +108,7 @@ const Service = () => {
                             Your hair is 90% of your selfie
                         </Typography>
 
-                        <Typography variant='body1'>
+                        <Typography variant='body1' color='textSecondary'>
                             hair-spirations? not problem, we will do our best to re-create that look you've
                             lusted after. After all, it's our job to make your look and fell your best
                         </Typography>

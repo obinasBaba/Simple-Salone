@@ -10,6 +10,8 @@ const useStyle = makeStyles( theme => ({
     },
     footerContainer: {
         flex: 1,
+        background: 'black',
+        color: 'white'
     }
 }))
 
@@ -23,9 +25,7 @@ const Footer = () => {
             </Grid>
 
             <Grid item container className={classes.footerContainer}>
-                <FooterContent>
-
-                </FooterContent>
+                <FooterContent/>
             </Grid>
         </Grid>
     );

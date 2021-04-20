@@ -1,13 +1,19 @@
 import React from 'react';
-import styled, {withTheme} from "styled-components";
-import {Box, Grid} from "@material-ui/core";
+import {Grid} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
 
 const useStyle = makeStyles( theme => ({
     root: {
-        marginBottom: theme.spacing( 3 ),
-
+        marginBottom: theme.spacing( 4 ),
+        maxWidth: '410px',
+        flexDirection: 'column',
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: '450px',
+        }
+    },
+    list: {
+        gap: '.3rem',
     }
 }) )
 
@@ -17,15 +23,16 @@ const StyledList = props => {
     const classes = useStyle();
 
     return (
-        <Grid  item container direction='column' className={classes.root} >
+        <Grid  item container  className={classes.root} >
             <Grid item>
                 <Typography variant='h4' >
                     { props.title }
                 </Typography>
             </Grid>
 
-            <Grid item container>
+            <Grid item container className={classes.list}>
                 { props.list.map( item =>
+
                     <Grid item container justify='space-between'>
 
                         <Typography noWrap>{ item.serviceTitle }</Typography>
