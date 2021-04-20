@@ -1,81 +1,109 @@
 import React from 'react';
-import {Grid, Typography} from "@material-ui/core";
+import {Grid, Typography, withStyles} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-// import rss from './rss.png'
 
-const useClass = makeStyles(theme => ({
+const ImgWrapperGrid = withStyles( theme => ({
     root: {
-        padding: theme.spacing(3),
-        '&:before': {
-            content: 'before',
-            display: 'block',
-            background: 'black',
-            width: '200px',
-            height: '200px'
-        }
-    },
-    col: {
+        justifyContent: 'initial',
 
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down( 'xs' )]: {
             justifyContent: 'center',
         },
 
         '& img': {
             maxWidth: '100%',
-            width: '60%',
+            width: '70%',
         }
     },
-    container: {
+}) )( Grid )
+
+const ChildGrid = withStyles( theme => ({
+    root: {
         position: 'relative',
+        gap: '2rem',
+        [theme.breakpoints.up( 'sm' )]: {
+            gap: '0',
+        },
+    },
+}) )( Grid )
+
+
+const ContainerGrid = withStyles( theme => ({
+    root: {
+        padding: theme.spacing( 3 ),
+        position: 'relative',
+        overflow: 'hidden',
+
         '&::after': {
-            content: 'sdlkjf',
             position: 'absolute',
-            top: 0,
-            left: 0,
-            background: 'blue',
-            display: 'block',
-            with: '200',
-            height: '200',
+            content: '"ABOUT"',
+            fontSize: 'calc(6rem + 6vw)',
+            fontFamily: 'Monoton, cursive',
+            left: '-5%',
+            fontWeight: '800',
+            opacity: '.07',
+            right: `calc( 0px + ${theme.spacing(10)}px )`,
+            bottom: '10%',
+
+            [theme.breakpoints.up( 'sm' )]: {
+                opacity: '.1',
+                bottom: 'initial',
+                left: 'initial',
+                top: '7%',
+            },
         }
     },
-    aboutText: {
+}) )( Grid )
+
+const useClass = makeStyles( theme => ({
+    overlay: {
         '&::before': {
-            // content: new String('asdf'),
-            // position: 'absolute',
-            // top: 0,
-            // left: 0,
-            background: 'blue',
+            content: '""',
+            zIndex: '-999',
+            position: 'absolute',
+            top: '21%',
+            bottom: '35%',
+            left: 0,
+            right: 0,
             display: 'block',
-            // with: '200',
-            // height: '200',
+            background: theme.palette.secondary.main,
+
+            [theme.breakpoints.up( 'sm' )]: {
+                bottom: '21%',
+            },
         }
     }
-}))
+}) )
 
 const About = () => {
     const classes = useClass();
 
     return (
-        <Grid container justify='center' className={classes.root}>
-            <Grid xs={0} sm={1}   />
+        <ContainerGrid container justify='center' >
+            <Grid xs={ 0 } sm={ 0 } lg={1} />
 
-            <Grid xs item container className={classes.container}>
 
-                <Grid item xs={12} sm={6} className={classes.col} container  >
+            <ChildGrid xs sm lg item container>
+
+                <div className={ classes.overlay }/>
+
+                <ImgWrapperGrid item container xs={ 12 } sm={ 6 }>
                     <img src='rrs.png' alt="rss"/>
-                </Grid>
+                </ImgWrapperGrid>
 
-                <Grid item container xs={12} sm={6} alignItems='center'   >
-                    <Typography variant='h5' className={classes.aboutText}>
-                        At MY Beauty Salon, we use the high quality products and the
-                        latest techniques for treating hair. We don't cut corners, we cut hair
-                        Book an appointment to find out for yourself.
-                    </Typography>
+                <Grid item container xs={ 12 } sm={ 6 } alignItems='center'>
+                    <Grid item container xs={ 12 } lg={ 10 }>
+                        <Typography variant='h5' component='p' color='textSecondary'>
+                            At MY Beauty Salon, we use the high quality products and the
+                            latest techniques for treating hair. We don't cut corners, we cut hair
+                            Book an appointment to find out for yourself.
+                        </Typography>
+                    </Grid>
                 </Grid>
-            </Grid>
+            </ChildGrid>
 
-            <Grid item xs={0} sm={1}   />
-        </Grid>
+            <Grid item xs={ 0 } sm={ 0 } lg={1}/>
+        </ContainerGrid>
     );
 };
 

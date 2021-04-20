@@ -1,7 +1,7 @@
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Box from "@material-ui/core/Box";
-import {Button, Hidden, TextField, Typography, useMediaQuery, useTheme, withStyles} from "@material-ui/core";
-import React, {useEffect, useState} from "react";
+import {Typography, useMediaQuery, useTheme, withStyles} from "@material-ui/core";
+import React, {useState} from "react";
 import MuiAccordion from "@material-ui/core/Accordion";
 import MuiAccordionSummary from "@material-ui/core/AccordionSummary";
 import MuiAccordionDetails from "@material-ui/core/AccordionDetails";

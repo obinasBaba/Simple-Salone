@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyle = makeStyles(theme => ({
     root: {
+        padding: theme.spacing(3),
         background: '#FFEBE3',
         [theme.breakpoints.up('md')]: {
             padding: theme.spacing(3),
@@ -17,8 +18,6 @@ const useStyle = makeStyles(theme => ({
     container: {
         display: 'grid',
         gridTemplateColumns: 'repeat(12, 1fr)',
-
-        // columnGap: theme.spacing(2),
         rowGap: theme.spacing(4),
         [theme.breakpoints.up('sm')]: {
             gridTemplateRows: '.8fr .2fr .6fr .2fr  .8fr',
