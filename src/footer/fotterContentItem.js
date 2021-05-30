@@ -96,7 +96,8 @@ const FooterItem = ( {title, children} ) => {
             <AccordionSummary
 
                 expandIcon={
-                   m2 ? <ExpandMoreIcon color='secondary'  onClick={handleExpanded} /> : null
+                   m2 ? <ExpandMoreIcon color='secondary'
+                                        onClick={handleExpanded} /> : null
                 }
                 aria-controls="panel1a-content"
                 id="panel1a-header">

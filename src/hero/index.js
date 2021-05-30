@@ -12,6 +12,7 @@ const useStyle = makeStyles(theme => ({
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
+
     },
     'hero-overlay': {
         position: 'absolute',

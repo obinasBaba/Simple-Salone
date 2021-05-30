@@ -10,6 +10,25 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 
 const useStyle = makeStyles( theme => ({
     root: {
+        /*backgroundImage: 'url(adam-winger-KVVjmb3IIL8-unsplash.jpg)',
+        backgroundPosition: "bottom",
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative',
+        zIndex: '1',
+
+        '&::after': {
+            content: '""',
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            background: 'black',
+            zIndex: '-1',
+            opacity: '.99',
+        },*/
+
         padding: theme.spacing(6),
         [theme.breakpoints.up('sm')]: {
             padding: theme.spacing(3),

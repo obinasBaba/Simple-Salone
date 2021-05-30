@@ -12,6 +12,7 @@ const useStyle = makeStyles( ({spacing, breakpoints}) => ({
         padding: spacing( 3 ),
         paddingTop: spacing( 5 ),
         paddingBottom: spacing( 5 ),
+        overflow: "hidden",
 
         [breakpoints.up( 'md' )]: {
             padding: spacing( 0 ),
