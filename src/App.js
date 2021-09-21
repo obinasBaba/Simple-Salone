@@ -3,13 +3,18 @@ import React from "react";
 import Hero from "./hero";
 import About from "./about";
 import Service from "./service";
-import ParallaxCarousel from "./gallery";
 import PriceList from "./priceList";
 import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles'
 import Footer from "./footer";
-import {orange} from "@material-ui/core/colors";
 import {responsiveFontSizes} from "@material-ui/core";
+import styled from "styled-components";
+import Gallery from "./gallery";
 
+const PageContainer = styled.div`
+  max-width: 1400px;
+  width: 100%;
+  overflow: hidden;
+`
 
 function App() {
     const secondaryMainColor = '#FFEBE3';
@@ -92,12 +97,14 @@ function App() {
     return (
         <React.Fragment>
             <ThemeProvider theme={ theme }>
+                <PageContainer>
                 <Hero/>
                 <About/>
                 <Service/>
-                <ParallaxCarousel/>
+                <Gallery/>
                 <PriceList/>
                 <Footer/>
+                </PageContainer>
             </ThemeProvider>
         </React.Fragment>
     );
